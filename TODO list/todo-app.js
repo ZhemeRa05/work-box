@@ -79,7 +79,7 @@ function createTodoItem (obj) {
         item.classList.toggle('list-group-item-success');
 
         for(const listItem of listArray){
-            if(listItem.id == obj.id) {listItem.done == !listItem.done}
+            if(listItem.id == obj.id) {listItem.done = !listItem.done}
         }
         saveList(listArray, listName);
 
@@ -121,6 +121,24 @@ function getNewId (arr){
 function saveList(arr, keyName){
     localStorage.setItem(keyName, JSON.stringify(arr))
 };
+
+let defArray = [
+    {   
+        id: 1,
+        name: 'купить хлеб',
+        done: true,
+    },
+    {
+        id: 2,
+        name: 'купить молока',
+        done: false,
+    },
+    {
+        id: 3,
+        name: 'купить овощи',
+        done: true,
+    },
+]
 
 function createTodoApp(container, title = 'Список дел', keyName, defArray = []){
 
