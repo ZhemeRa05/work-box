@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    background-image: url(../img/wood-wooden-surface-planks-texture-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    margin: 0 auto;
+    background-image: url(../img/скатерть-шашечный-красно-белый-фон-текстура-хлопка-проверенная-белой-215373816.jpg);
+    width: 1000px;
+    min-height: 855px;
+}
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    border-radius: 10px;
+  }
+
+  .memory-card:active{
+    box-shadow: 4px 6px 10px rgba(0,0,0,1);
+  }
+  
+  .front-face,.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
+    /*Свойство определяющее бедет ли видна обратная сторона перевёрнутого объекта*/
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+  .front-face {
+    transform: rotateY(180deg);
+  }
